@@ -1,4 +1,4 @@
-![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_58_44](https://github.com/user-attachments/assets/670fe4d6-caa5-482d-ba96-2be9e6f0b7df)![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_58_44](https://github.com/user-attachments/assets/38162387-c031-44e0-93f9-a1af15bbaa12)# Jarkom-Modul-1-IT44-2024
+# Jarkom-Modul-1-IT44-2024
 | Nama                     | NRP         |
 | -------------------------| ----------- |
 | Diandra Naufal Abror     | 5027231004  |
