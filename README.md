@@ -19,5 +19,18 @@ Jika diinput kembali pada 10.15.42.60 44000 maka akan diterima sebagai jawaban b
 ### FLAG
 JarkomIT{8uK4n_S4n1ty_b1a5A_41pctZxGk6SeQyyvrznzm0LLuSu5V5GdC7fAfZoVK1zJXlfXm6JnPIKK}
 
+-----------------------------------------------------------------------------------------------
 
 ## CORPORATE BREACH
+nc 10.15.42.60 51000 <br />
+pada packet no 23 terdapat clue "Who has 172.21.80.1? Tell 172.21.88.207" Jika kita apply filter untuk conversation antara 172.21.88.207 dan 172.21.80.1 maka akan ditemukan nama hacker pada packet no. 4 dengan header POST <br />
+![image](https://github.com/user-attachments/assets/75dcde4e-7ba8-42d0-aaec-30149acc327e) <br />
+Lalu selanjutnya perlu dicari email yang digunakan untuk login. Dari packet dapat dilihat bahwa hacker melakukan brute forcing dengan banyak email. Pertama filter untuk melihat semua traffic post login _http.request.method == "POST"_. Terdapat satu packet dengan length yang lebih besar daripada packet lainnya. <br />
+![image](https://github.com/user-attachments/assets/5bef3b60-104a-4793-838a-e96b5a9ee454) <br />
+![image](https://github.com/user-attachments/assets/a8082190-8dda-45a7-9b68-7a13f157a5f0) <br />
+
+### FLAG
+JarkomIT{supp0rt_k0k_l3m4h_bg_rzWkD6HFKCvIH957HVqpZmYKPG6vTFmncEv5DJ8Ti2PZnOI0J7QfG6}
+
+
+
