@@ -77,6 +77,19 @@ Jika dijalankan maka outputnya _g0tchu n0w l1ttl3 m0us3_
 JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_2m7YEkpb2B82nVnWVAvP1Oi3uG0yLK34UQMQQJOFEvlg79Rr26wgTCHU}
 
 -----------------------------------------------------------------------------------------------
+
+## GAJAH TERBANG (Server recon)
+Terdapat banyak packet yang menggunakan PGSQL protocol yang mengindikasikan bahwa PostgreSQL digunakan. ketika TCP handshake berlangsung dilihat bahwa syn packet menuju port 6969 sehingga server dbms berjalan pada port 6969.
+Pada packet no 164 dapat dilihat bahwa os yang digunakan adalah Debian 16.4-1 <br />
+![image](https://github.com/user-attachments/assets/e457667e-be35-4dc0-ad20-843a85a2fbf9) <br />
+Pada packet ini juga dapat dipastikan bahwa username valid adalah _s1gm4_ dan nama database _sigmaskibidigyatrizzzz_. Dapat dilihat bahwa jojohermawan@gmail.com memiliki role admin dan untuk passwordnya dapat dilakukan dekripsi hash MD5 yang menghasilkan _admin1234_
+
+
+### FLAG
+JarkomIT{Gy4tT_M5g_4U_7iZK7YAU30kGtJaDWlvGCFgPG5k1IKFtHNko8oNfaJkxWFib15tkiBiD1}
+
+-----------------------------------------------------------------------------------------------
+
 ## Pegawai Negeri Sebelah
 Terdapat _challange_ dengan keterangan sebagai berikut, "Kamu seorang data analisis diminta untuk memastikan ulang data-data dari beberapa pegawai.". Berikut adalah alur pengerjaan saya:
 - Siapa yang memiliki password nNnM%coQuF?
