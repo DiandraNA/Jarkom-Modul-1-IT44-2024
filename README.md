@@ -1,4 +1,4 @@
-# Jarkom-Modul-1-IT44-2024
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_58_44](https://github.com/user-attachments/assets/670fe4d6-caa5-482d-ba96-2be9e6f0b7df)![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_58_44](https://github.com/user-attachments/assets/38162387-c031-44e0-93f9-a1af15bbaa12)# Jarkom-Modul-1-IT44-2024
 | Nama                     | NRP         |
 | -------------------------| ----------- |
 | Diandra Naufal Abror     | 5027231004  |
@@ -77,4 +77,54 @@ Jika dijalankan maka outputnya _g0tchu n0w l1ttl3 m0us3_
 JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_2m7YEkpb2B82nVnWVAvP1Oi3uG0yLK34UQMQQJOFEvlg79Rr26wgTCHU}
 
 -----------------------------------------------------------------------------------------------
+## Pegawai Negeri Sebelah
+Terdapat _challange_ dengan keterangan sebagai berikut, "Kamu seorang data analisis diminta untuk memastikan ulang data-data dari beberapa pegawai.". Berikut adalah alur pengerjaan saya:
+- Siapa yang memiliki password nNnM%coQuF?
+  Langkah pertama adalah membuka **rahasia.pcap** di Wireshark, lalu menjalankan filter `frame contains "nNnM%coQuF"` untuk mencari individu yang memiliki password spesifik tersebut. Setelah mendapat paket, saya mengikuti TCP Stream dan mencari kata kunci tersebut. Dan muncul "Vero Tampubolon".
+  ![image](https://github.com/user-attachments/assets/4e83249a-4d1e-4fd7-845d-710ec7b2856d)
+- Apa jabatan dari Taufan Kuswandari?
+  Masih dengan paket yang sama, saya mencari nama tersebut dan mendapatkan hasil "Analis Kebijakan".
+  ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_27_48](https://github.com/user-attachments/assets/636fac9e-7a7e-40f0-b540-350ec5299fa4)
+- Siapa yang paling awal di list?
+Dengan teknik yang sama, saya menemukan "Cici Mustofa" dengan mencari data pertama.
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_27_48](https://github.com/user-attachments/assets/e1c4b04c-5922-4e5e-9cbc-ef80e07d6195)
+- Apa password paling akhir dari list?
+Hasilnya adalah "RyxaJPv^yF".
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_30_46](https://github.com/user-attachments/assets/3729a8c8-836f-4ecd-bc62-81e476880af1)
+### Benar! Ini flag-mu: `JarkomIT{Tum8eN_p45SnYa_Ku4t_B1aS4Nya_ba95q8Auofp6UEJe9rcN4i07aL3kbeGnqOFMqVukmKZaLYahyw7EM4h}`
 
+## EZ
+Terdapat _challange_ dengan keterangan sebagai berikut, "Aku sedang mencoba bikin chat service tapi kayanya pesannya bisa di sniffing deh? coba temukan pesannya.". Berikut adalah alur pengerjaan saya:
+- Temukan jawaban dari log tersebut
+  Setelah membuka **ez.pcap**. Saya lalu membuka paket pertama dan mengikuti TCP Streamnya, lalu _scroll_ hingga menemukan sebuah jawaban yaitu "jawabannya jawaban".
+  ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_36_23](https://github.com/user-attachments/assets/e179aefa-8dab-4b06-8a62-48ff109ef35d)
+- Port berapa yang digunakan service tersebut
+Saya cek _port_ paket tersebut.
+  ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_39_08](https://github.com/user-attachments/assets/2fdeb593-07be-4275-b634-8d28b0ec6514)
+### Benar! Ini flag-mu: `JarkomIT{BiAr_aman_Pake_sSh_NyIIib1a7K632z7rgX3agwGU93zdMHl5HoXo3IRXYSycbWLrZzu9EZ}`
+
+## FTP Login
+Terdapat _challange_ dengan keterangan sebagai berikut, "Seseorang menemukan sebuah celah dalam sebuah server. Ia mencoba untuk melakukan brute force login dan ia berhasil masuk. Lakukan pemeriksaan untuk melihat apa yang dilakukan oleh orang tersebut!". Berikut adalah alur pengerjaan saya:
+- Apa username yang berhasil digunakan untuk FTP login?
+**ftplogin.pcapng** berhasil dibuka, saya gunakan _feeling_ dengan membuka FTP yang berada di akhir paket. Dan muncul keterangan "Login successful", saya buka paket tersebut dan mengikuti TCP Streamnya. Terdapat keterangan bahwa pengguna "sn34ky" berhasil _login_ dengan _password_ "sup3rsn1ff3r".
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_49_58](https://github.com/user-attachments/assets/439dda90-5f5b-42a0-8dfa-d3fbc92dadf1)
+- Apa password yang berhasil digunakan untuk FTP login?
+  Tentu saja "sup3rsn1ff3r".
+### Benar! Ini flag-mu: `JarkomIT{n0t_s0_s3cur3_ftp_O85JzJ2SJhrZjhC0G9UheO56nL03L4jugvymlYiwogfwbgUJ79OtG1N}`
+
+## Illegal Breakthrough
+Terdapat _challange_ dengan keterangan sebagai berikut, "Seorang full-stack developer bernama kevin sedang membuat sebuah web yang memiliki login page. Tetapi karena ia hanya digaji rendah, ia lupa untuk mengamankan web yang ia buat. Bantulah kevin untuk tracing dari jejak yang ditinggalkan oleh attacker.". Berikut adalah alur pengerjaan saya:
+- Apa IP address dari korban?
+Setelah melihat **break.pcapng**, paket pertama memiliki _destination_ "172.21.88.207".
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_54_27](https://github.com/user-attachments/assets/29bd3646-ef42-4306-80d0-acd1941c629d)
+- Apa port yang digunakan sebagai webserver?
+  Tentu saja "1917", kita dapat melihatnya dari informasi paket.
+- Dimana endpoint yang terdapat login?
+  Di "/ww1.php", kita bisa melihatnya dari informasi paket.
+- Tools apa yang digunakan oleh attacker?
+  Saya buka salah satu paket dengan protokol HTTP, saya mendapatkan hasil "Fuzz Faster U Fool v2.1.0-dev" setelah mengikuti TCP Streamnya. Namun jawaban yang diinginkan adalah "ffuf-v2.1.0-dev".
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 18_09_2024 23_58_44](https://github.com/user-attachments/assets/522829fe-efce-4639-87e8-57ee3fc10db1)
+- Apa kredensial yang berhasil digunakan oleh attacker untuk login?
+  Berhubung saya sudah mengetahui identitas _attacker_ yaitu "Redbarron", saya menggunakan `frame contains "Redbaron" lalu memilih paket terakhir dengan asumsi bahwa ia sudah berhasil login. Dan memang ia berhasil login dengan _password_ "fly1ng4c3". Maka jawaban yang diinginkan adalah "Redbaron:fly1ng4c3"
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 19_09_2024 00_05_29](https://github.com/user-attachments/assets/724a19ba-a530-4b3a-bb1d-df36b9cf1b62)
+### Benar! Ini flag-mu: `JarkomIT{d34th_fr0m_th3_sky_JQLrqB7mInNbSyRFyEYoQRCeZH1XEzy3Hnsk4hykmNp7IWWwoI4zWW1}`
