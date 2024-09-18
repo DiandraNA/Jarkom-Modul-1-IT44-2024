@@ -32,5 +32,49 @@ Lalu selanjutnya perlu dicari email yang digunakan untuk login. Dari packet dapa
 ### FLAG
 JarkomIT{supp0rt_k0k_l3m4h_bg_rzWkD6HFKCvIH957HVqpZmYKPG6vTFmncEv5DJ8Ti2PZnOI0J7QfG6}
 
+-----------------------------------------------------------------------------------------------
+## Surprise
+nc 10.15.42.60 48500 <br />
+Pada header packet 12 berjudul response 220 vsFTPd 3.0.3. Command untuk mengirim file adalah STOR maka kita dapat apply filter untuk mencari traffic yang mengirim file _frame contains "STOR"_ <br />
+![image](https://github.com/user-attachments/assets/357d6773-9a62-4ee4-bdd6-4daddb862a06) <br />
+Lalu jika di follow streamnya maka akan ditemukan content dari g0tcha.cpp
+```
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
+string generateString() {
+    auto tochip = [](int num) -> string {
+        string chipStr;
+        if (num < 0 || num > 255) return "";
+        char buffer[3];
+        snprintf(buffer, sizeof(buffer), "%02x", num);
+        chipStr = buffer;
+        return chipStr;
+    };
+
+    vector<int> chipParts = {103, 48, 116, 99, 104, 117, 32, 110, 48, 119, 32, 108, 49, 116, 116, 108, 51, 32, 109, 48, 117, 115, 51};
+
+    string result;
+    for (int part : chipParts) {
+        result += static_cast<char>(part);
+    }
+
+    return result;
+}
+
+int main() {
+    string result = generateString();
+
+    cout << result << endl;
+
+    return 0;
+}
+```
+Jika dijalankan maka outputnya _g0tchu n0w l1ttl3 m0us3_
+### FLAG
+JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_2m7YEkpb2B82nVnWVAvP1Oi3uG0yLK34UQMQQJOFEvlg79Rr26wgTCHU}
+
+-----------------------------------------------------------------------------------------------
 
