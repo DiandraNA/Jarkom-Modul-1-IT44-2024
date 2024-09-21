@@ -6,7 +6,16 @@
 
 Write Up Modul 1.
 - [Advance Sanity Check](#advance-sanity-check)
-- [Gajah Terbang (server recon](#gajah-terbang)
+- [Corporate Breach](#corporate-breach)
+- [Surprise](#surprise)
+- [Gajah Terbang (server recon](#gajah-terbang-server-recon)
+- [Pegawai Negeri Sebelah](#pegawai-negeri-sebelah)
+- [EZ](#ez)
+- [FTP Login](#ftp-login)
+- [Illegal Breakthrough](#illegal-breakthrough)
+<br />
+
+**REVISI**
 
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
