@@ -5,6 +5,9 @@
 | Acintya Edria Sudarsono  | 5027231020  |
 
 Write Up Modul 1.
+- [Advance Sanity Check](#advance-sanity-check)
+- [Gajah Terbang (server recon](#gajah-terbang)
+
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
 ![image](https://github.com/user-attachments/assets/2b1be634-62a3-43d5-8b77-2609ffc9b445)<br />
