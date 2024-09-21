@@ -8,7 +8,7 @@ Write Up Modul 1.
 - [Advance Sanity Check](#advance-sanity-check)
 - [Corporate Breach](#corporate-breach)
 - [Surprise](#surprise)
-- [Gajah Terbang (server recon](#gajah-terbang-server-recon)
+- [Gajah Terbang (server recon)](#gajah-terbang-server-recon)
 - [Pegawai Negeri Sebelah](#pegawai-negeri-sebelah)
 - [EZ](#ez)
 - [FTP Login](#ftp-login)
@@ -29,7 +29,7 @@ Jika diinput kembali pada 10.15.42.60 44000 maka akan diterima sebagai jawaban b
 ![image](https://github.com/user-attachments/assets/81005f77-317e-4e16-a5a5-33cce59c581a)
 
 ### FLAG
-JarkomIT{8uK4n_S4n1ty_b1a5A_41pctZxGk6SeQyyvrznzm0LLuSu5V5GdC7fAfZoVK1zJXlfXm6JnPIKK}
+`JarkomIT{8uK4n_S4n1ty_b1a5A_41pctZxGk6SeQyyvrznzm0LLuSu5V5GdC7fAfZoVK1zJXlfXm6JnPIKK}`
 
 -----------------------------------------------------------------------------------------------
 
@@ -153,3 +153,19 @@ Setelah melihat **break.pcapng**, paket pertama memiliki _destination_ "172.21.8
   Berhubung saya sudah mengetahui identitas _attacker_ yaitu "Redbarron", saya menggunakan `frame contains "Redbaron" lalu memilih paket terakhir dengan asumsi bahwa ia sudah berhasil login. Dan memang ia berhasil login dengan _password_ "fly1ng4c3". Maka jawaban yang diinginkan adalah "Redbaron:fly1ng4c3"
 ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 19_09_2024 00_05_29](https://github.com/user-attachments/assets/724a19ba-a530-4b3a-bb1d-df36b9cf1b62)
 ### Benar! Ini flag-mu: `JarkomIT{d34th_fr0m_th3_sky_JQLrqB7mInNbSyRFyEYoQRCeZH1XEzy3Hnsk4hykmNp7IWWwoI4zWW1}`
+
+--------------------------------------------------------------------------------------------------------
+# REVISI
+## Packets Barrage
+nc 10.15.42.60 47000 <br />
+Dapat dilihat dari traffic bahwa ip penyerang adalah _172.21.80.1_ <br />
+![Screenshot 2024-09-21 103115](https://github.com/user-attachments/assets/cb0cce70-51c9-41b5-b723-1f3523643927) <br />
+Dengan memfilter _http.request.method == "POST"_ didapat 1918 packet tapi karena un/pw di tcp.stream eq 1917 sudah ditemukan maka total attempt 1917. <br />
+Selanjutnya untuk mencari file yang di download attacker <br />
+![image](https://github.com/user-attachments/assets/f59e71cc-f05a-431b-8a28-974ffe3eca6d) <br />
+Dari packet 19249 dapat dipastikan bahwa nama file yang di download _Albatros.txt_ dan isinya _Der Rote Kampfflieger_
+
+### FLAG
+JarkomIT{th3_fly1ng_c1rcus_0f_w4r_rSSczHdZYSXlh9gWiy7ZWAq8R5St8AckPqhRlmOaTw353Zm7Sg3oLACE}
+
+
