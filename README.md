@@ -18,6 +18,9 @@ Write Up Modul 1.
 **REVISI**
 - [Packets Barrage](#packets-barrage)
 - [Malicious Code](#malicious-code)
+- [Rizzset](#rizzset)
+- [Gajah Terbang (attacker recon)](#gajah-terbang-attacker-recon)
+- [Stegography](#stegography)
 
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
@@ -188,7 +191,7 @@ jawabannya `merah` _di bruteforce aja cobain semua_
 `JarkomIT{s3cr3t_m3ss4ge_fr0m_4uth0r_VGszlHQVO2ASDMSpItu7bAgXKC0FdPBgkxRg6w4Ev6Hj1wp8cjnCL0R}`
 
 ------------------------------------------------------------------------------------------------------------------
-## Rizzet
+## Rizzset
 Ketika packet dibuka langsung terlihat nama domain <br />
 ![image](https://github.com/user-attachments/assets/8a575af3-2434-4c23-bd2f-31654381d9a4) <br />
 Pada packet terdapat clue _Who has 172.24.128.1? Tell 172.24.141.242_ maka saya apply filter untuk conversation antara keduanya. dan jika difollow stream maka akan ketemu ip address <br />
@@ -201,6 +204,27 @@ apa JARM fingerprintnya?
 
 ### FLAG
 `JarkomIT{Dn5_C0rR34t10n_mWHKnQ1WRkOrfhA1oHghjvTgwr1zZEkVtVfDnwMIIffX8z4wmlsflh1T5}`
+
+----------------------------------------------------------------------------------------------------------------------
+## Gajah Terbang (Attacker Recon)
+Untuk mencari tahu siapa attackernya, saya kembali mengecek daftar database user. Karena ada satu user yang letaknya tidak berurut sesuai dengan id-nya maka saya coba dan ternyata benar. <br />
+![image](https://github.com/user-attachments/assets/abbd17ba-9679-43fa-b0b8-099fd503a4b7) <br />
+`kuntoajiisrillll@gmail.com` <br />
+Lalu tinggal decode passwordnya menggunakan hash md5 _aa1cbddbb1667f7227bcfdb25772f85c_ jadi `kissme` <br />
+Informasi mengenai kapan user tersebut di-ban juga dapat dilihat dari packet <br />
+![image](https://github.com/user-attachments/assets/390e8447-adce-4e45-a6ea-bbaa5fe9f26b)<br />
+`2024-06-09` <br />
+Lalu dari informasi tersebut juga dapat ditarik kesimpulan bahwa tabel yang dimodifikasi attacker adalah tabel user (posisi data user tidak berurut) dan banned user. <br />
+![image](https://github.com/user-attachments/assets/ead90b43-bca0-4f68-b840-d0030d00f8f2) <br />
+Barang yang telah dibeli attacker adalah `rokok dan es krim`. Totalnya 18000 + 6500 = `24500`
+
+### FLAG
+`JarkomIT{G4jaH_K0k_t3RbaNG_gfMgXdBz23qI8NfNWZMMC4mYEYntKKGQ1KhECjHfh2amANyvFL6HKKt5}`
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
