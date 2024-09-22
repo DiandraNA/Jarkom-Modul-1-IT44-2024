@@ -4,8 +4,9 @@
 | -------------------------| ----------- |
 | Diandra Naufal Abror     | 5027231004  |
 | Acintya Edria Sudarsono  | 5027231020  |
+<br />
 
-Write Up Modul 1.
+**Write Up Modul 1**
 - [Advance Sanity Check](#advance-sanity-check)
 - [Corporate Breach](#corporate-breach)
 - [Surprise](#surprise)
