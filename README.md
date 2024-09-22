@@ -230,7 +230,7 @@ Untuk mengetahui file yang dikirim penyerang kita dapat coba menggunakan filter 
 ![image](https://github.com/user-attachments/assets/4ad10212-e20a-4322-8d1d-f6cbbf93b0fc) <br />
 Selanjutnya export object - ftp data untuk mendapatkan file sh1k4.jpg dan st0r.py <br />
 ![image](https://github.com/user-attachments/assets/dcb8a67e-9b58-4a47-a30d-1dc1a7b3916f) <br />
-Lalu dalam file St0r.py terdapat kode biner ``001001100011010000100010001000100011101001101110001001110011100001101110000110100011101000111100001011110011111000100001011011100001111000100001001111010011110100100111
+Lalu dalam file St0r.py terdapat kode biner `001001100011010000100010001000100011101001101110001001110011100001101110000110100011101000111100001011110011111000100001011011100001111000100001001111010011110100100111`
  jika di decode `hallo im Torako Koshi`
 
 ### FLAG
@@ -239,6 +239,24 @@ Lalu dalam file St0r.py terdapat kode biner ``0010011000110100001000100010001000
 -----------------------------------------------------------------------------------------------------------------------------`
 
 ## InnerRCE
+Jika kita apply filter `frame contains "POST"` maka akan tersisa 2 packet dan salah satunya berhasil upload <br />
+![image](https://github.com/user-attachments/assets/1d613851-84d5-4505-b241-4e1a2ac67a44) <br />
+maka waktunya adalah `2024-09-16 13:18:05` <br />
+![image](https://github.com/user-attachments/assets/8a13f8f1-ef33-4091-a87b-8d4c764a6a63) <br />
+Maka pathnya adalah `/upload.php_server-app`
+![image](https://github.com/user-attachments/assets/d5accfa6-7560-4cd7-858c-837816b712c2) <br />
+pada stream 27 dapat dilihat hacker berhasil upload webshell `idzoyyshell.php` <br />
+![image](https://github.com/user-attachments/assets/c01142e3-ca4a-4131-b1ba-3ed137781dd6) <br />
+Dapat dilihat bahwa command pertama yang dijalankan adalah `whoami`. Jika stream terus di follow maka kita akan temukan pesan yang hacker tuliskan. <br />
+![image](https://github.com/user-attachments/assets/05e2f2c6-fdb6-4a7d-9580-a3b026d5a896) <br />
+Jika di decode menggunakan base64 `pls rate soal ini`
+
+
+
+### FLAG
+`JarkomIT{P4L1nG_g4mPaNg_An4L1sA_W3b_aTk_rXmiHvtHy7LKQVZBtLTFecXJtW4iGUAin4zKblP6f29dXpYXCUy9bRCE}`
+
+
 
 
 
