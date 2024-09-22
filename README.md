@@ -1,4 +1,4 @@
-# Jarkom-Modul-1-IT44-2024
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 22_09_2024 18_17_01](https://github.com/user-attachments/assets/c809e7f2-87fd-497e-982c-5d23147a6129)# Jarkom-Modul-1-IT44-2024
 | Nama                     | NRP         |
 | -------------------------| ----------- |
 | Diandra Naufal Abror     | 5027231004  |
@@ -22,6 +22,9 @@ Write Up Modul 1.
 - [Gajah Terbang (attacker recon)](#gajah-terbang-attacker-recon)
 - [22 Nightmare](#22-nightmare)
 - [InnerRCE](#innerrce)
+- [Baby Hengker](#baby-hengker)
+- [Adult Hengker](#adult-hengker)
+- [Stegography](#stegography)
 
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
@@ -256,11 +259,31 @@ Jika di decode menggunakan base64 `pls rate soal ini`
 ### FLAG
 `JarkomIT{P4L1nG_g4mPaNg_An4L1sA_W3b_aTk_rXmiHvtHy7LKQVZBtLTFecXJtW4iGUAin4zKblP6f29dXpYXCUy9bRCE}`
 
+## Baby Hengker
+Terdapat _challange_ dengan keterangan sebagai berikut, "Pada suatu hari, ada seorang mahasiswa yang menyusup kedalam lab. mahasiswa tersebut menyalakan salah satu komputer yang ada dan mulai mengetikkan sesuatu?!?!?! bantulah mas aji menganalisa apa yang dilakukan oleh mahasiswa tersebut.". Berikut adalah alur pengerjaan saya:
+- Kapan hacker tersebut mengakses komputer yang ada di lab?
+  Saya membuka **innerchild.pcap**, lalu membuka peket dengan detail "URB_INTERRUPT in". Mengindikasikan sebuah _device_ baru saja terhubung pada 2024-09-16 13:43.
+![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 22_09_2024 18_17_01](https://github.com/user-attachments/assets/5dd21bd7-2ad8-4bfb-9d1d-cf4229ba82ff)
+- Apa yang dituliskan oleh hacker tersebut?
+  Berhubung file .pcap tersebut berulangkali menunjukkan HID Data, saya menggunakan _script_ untuk mengkonversi data tersebut ke dalam karakter alfabet. Hasil yang didapatkan adalah "ini ppassword wiffinyya appa ya?". Setelah mengurangi karakter yang repetitif dan melakukan _bruteforce_. Saya menemukan kata kunci "ini passwordnya apa ya?".
+### Benar! Ini flag-mu: `JarkomIT{4ku_p9n_j4d1_h3n9k3r_Y0cfeXATCLjIcMIAUdhKnvkXDAm1w103I8uvbweUVkHM7sC6M07BSHCK}`
 
+## Adult Hengker
+Terdapat _challange_ dengan keterangan sebagai berikut, "Setelah sang mahasiswa tau passwordnya, dia akhirnya bisa masuk ke komputer dan menuliskan sesuatu di ms paint, apakah kamu tau dia menulis apa?". Berikut adalah alur pengerjaan saya:
+- Apakah device yang digunakan oleh seorang mahasiswa tersebut?
+  Setelah membuka **innerchild2.pcap**, saya membuka paket dengan keterangan "GET DESCRIPTOR Response CONFIGURATION" untuk mengetahui _device_ apa yang tersambung. Dan terdapat jawaban "Mouse".
+  ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 22_09_2024 18_30_21](https://github.com/user-attachments/assets/a6017342-86c1-431c-bd04-c5a82b530bf6)
+- Apakah device yang digunakan oleh seorang mahasiswa tersebut?
+  Seharusnya pertanyaan tersebut menjadi "Kalimat apa yang dituliskan oleh mahasiswa tersebut?", setelah mencoba-coba berbagai _script_ untuk mengkonversi data tersebut baik menjadi output apapun itu. Muncul sebuah jawaban dengan mengubah kumpulan data tersebut menjadi serangkaian _stroke_ mouse yang digeser membentuk sebuah kata "HALO MAS KEVIN SALKEN".
+### Benar! Ini flag-mu: `JarkomIT{d0n7_wr173_r4nd0m1y_nscPe60yXnhWP7bFogalr7gSpm45Ouo6usJpMWLyTQdYVeLX6HCCsK3v1n}`
 
-
-
-
-
-
-
+## Stegography
+Terdapat _challange_ dengan keterangan sebagai berikut, "Seekor stegosaurus berusaha menyimpan pesan di dalam beberapa gambar apakah kamu bisa memperoleh dan menyusunnya?". Berikut adalah alur pengerjaan saya:
+- Ada berapa banyak gambar yang dikirim?
+  Pada **image.pcap**, saya menggunakan filter `frame contains "png"` untuk mengetahui berapa gambar yang dikirim. Terdapat 13 gambar dengan ekstensi .png yang dikirim.
+  ![Kali Linux 2024 3 (Debian 12 x) 64-bit - VMware Workstation 22_09_2024 18_40_46](https://github.com/user-attachments/assets/5a069cdb-cb71-4cff-a4fa-be657a46c413)
+- Nama-nama file yang memiliki pesan? (Berurut abjad)
+  Setelah membuka masing-masing gambar tersebut, ditemukan bahwa ATP.png mengandung kata tersembunyi "nawalhap"; EH.png mengandung kata "nanamaek"; KJK.png mengandung kata "rebis". Maka jawaban yang tepat adalah ATP, EH, KJK.
+- Apa pesannya jika digabung?
+  "pahlawan keamanan siber", karena kalimat tersebut tertulis secara terbalik. Maka setelah berbagai percobaan kata, jawabannya ditemukan.
+### Benar! Ini flag-mu: `JarkomIT{S3LaM4t_p4rA_PahL4WaN_E3KALxrLHclXyT914408ZP3l2P5sj90oEV9yWdS0N3MB4X3pmK4ffhC5}`
