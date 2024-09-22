@@ -16,6 +16,8 @@ Write Up Modul 1.
 <br />
 
 **REVISI**
+- [Packets Barrage](#packets-barrage)
+- [Malicious Code](#malicious-code)
 
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
@@ -42,7 +44,7 @@ Lalu selanjutnya perlu dicari email yang digunakan untuk login. Dari packet dapa
 ![image](https://github.com/user-attachments/assets/a8082190-8dda-45a7-9b68-7a13f157a5f0) <br />
 
 ### FLAG
-JarkomIT{supp0rt_k0k_l3m4h_bg_rzWkD6HFKCvIH957HVqpZmYKPG6vTFmncEv5DJ8Ti2PZnOI0J7QfG6}
+`JarkomIT{supp0rt_k0k_l3m4h_bg_rzWkD6HFKCvIH957HVqpZmYKPG6vTFmncEv5DJ8Ti2PZnOI0J7QfG6}`
 
 -----------------------------------------------------------------------------------------------
 ## Surprise
@@ -86,7 +88,7 @@ int main() {
 ```
 Jika dijalankan maka outputnya _g0tchu n0w l1ttl3 m0us3_
 ### FLAG
-JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_2m7YEkpb2B82nVnWVAvP1Oi3uG0yLK34UQMQQJOFEvlg79Rr26wgTCHU}
+`JarkomIT{l1ttl3_m0us3_1n_th3_h0us3_2m7YEkpb2B82nVnWVAvP1Oi3uG0yLK34UQMQQJOFEvlg79Rr26wgTCHU}`
 
 -----------------------------------------------------------------------------------------------
 
@@ -98,7 +100,7 @@ Pada packet ini juga dapat dipastikan bahwa username valid adalah _s1gm4_ dan na
 
 
 ### FLAG
-JarkomIT{Gy4tT_M5g_4U_7iZK7YAU30kGtJaDWlvGCFgPG5k1IKFtHNko8oNfaJkxWFib15tkiBiD1}
+`JarkomIT{Gy4tT_M5g_4U_7iZK7YAU30kGtJaDWlvGCFgPG5k1IKFtHNko8oNfaJkxWFib15tkiBiD1}`
 
 -----------------------------------------------------------------------------------------------
 
@@ -166,6 +168,26 @@ Selanjutnya untuk mencari file yang di download attacker <br />
 Dari packet 19249 dapat dipastikan bahwa nama file yang di download _Albatros.txt_ dan isinya _Der Rote Kampfflieger_
 
 ### FLAG
-JarkomIT{th3_fly1ng_c1rcus_0f_w4r_rSSczHdZYSXlh9gWiy7ZWAq8R5St8AckPqhRlmOaTw353Zm7Sg3oLACE}
+`JarkomIT{th3_fly1ng_c1rcus_0f_w4r_rSSczHdZYSXlh9gWiy7ZWAq8R5St8AckPqhRlmOaTw353Zm7Sg3oLACE}`
+
+------------------------------------------------------------------------------------------------------------------
+## Malicious Code
+File sama seperti corporate breach <br />
+Untuk mencari tahu berapa kali attacker melakukan listing dapat menggunakan filter _http.request.method == "GET"_.
+Dapat dilihat attacker melakukan bruteforcing beberapa kali sebelum akhirnya mendapatkan endpoint untuk login page _/index.php_ <br />
+![image](https://github.com/user-attachments/assets/564ae96d-3a90-4d70-9424-0aeec824cfff) <br />
+Attacker berhasil mendapatkan email dan password yang benar pada attempt ke _153_ <br />
+![image](https://github.com/user-attachments/assets/cb969a5b-c9bd-478b-b422-033ddc7e3d6c) <br />
+Pada stream 221 didapat pesan terenkripsi dari attacker `9711297321199711411097321029711811111410511632112101109981179711632991049710810810111010310163324010410511011658321151191019711610111441`
+Jikaa di decode menggunakan ascii translator maka akan didapat pertanyaan dari attacker. <br />
+![image](https://github.com/user-attachments/assets/cb5776af-ae98-4426-8057-db3765ec33aa) <br />
+jawabannya `merah` _di bruteforce aja cobain semua_
+
+
+### FLAG
+`JarkomIT{s3cr3t_m3ss4ge_fr0m_4uth0r_VGszlHQVO2ASDMSpItu7bAgXKC0FdPBgkxRg6w4Ev6Hj1wp8cjnCL0R}`
+
+------------------------------------------------------------------------------------------------------------------
+
 
 
