@@ -188,6 +188,19 @@ jawabannya `merah` _di bruteforce aja cobain semua_
 `JarkomIT{s3cr3t_m3ss4ge_fr0m_4uth0r_VGszlHQVO2ASDMSpItu7bAgXKC0FdPBgkxRg6w4Ev6Hj1wp8cjnCL0R}`
 
 ------------------------------------------------------------------------------------------------------------------
+## Rizzet
+Ketika packet dibuka langsung terlihat nama domain <br />
+![image](https://github.com/user-attachments/assets/8a575af3-2434-4c23-bd2f-31654381d9a4) <br />
+Pada packet terdapat clue _Who has 172.24.128.1? Tell 172.24.141.242_ maka saya apply filter untuk conversation antara keduanya. dan jika difollow stream maka akan ketemu ip address <br />
+![image](https://github.com/user-attachments/assets/32bdd6af-ed2e-4773-887e-e5c12742c51b) <br />
+`103.94.189.5` <br />
+apa JARM fingerprintnya?
+![image](https://github.com/user-attachments/assets/53ee6e58-fac1-4b4f-99cd-235251c8729a)
+`2ad2ad16d2ad2ad22c2ad2ad2ad2ad74aaecca9f9c4a3303863dfee62b241e`
+
+
+### FLAG
+`JarkomIT{Dn5_C0rR34t10n_mWHKnQ1WRkOrfhA1oHghjvTgwr1zZEkVtVfDnwMIIffX8z4wmlsflh1T5}`
 
 
 
