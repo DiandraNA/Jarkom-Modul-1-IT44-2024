@@ -20,7 +20,8 @@ Write Up Modul 1.
 - [Malicious Code](#malicious-code)
 - [Rizzset](#rizzset)
 - [Gajah Terbang (attacker recon)](#gajah-terbang-attacker-recon)
-- [Stegography](#stegography)
+- [22 Nightmare](#22-nightmare)
+- [InnerRCE](#innerrce)
 
 ## Advance Sanity Check
 pada clue diberikan ip address nc 10.15.42.60 44000. Jika dijalankan, tampilannya seperti ini : <br />
@@ -222,6 +223,23 @@ Barang yang telah dibeli attacker adalah `rokok dan es krim`. Totalnya 18000 + 6
 `JarkomIT{G4jaH_K0k_t3RbaNG_gfMgXdBz23qI8NfNWZMMC4mYEYntKKGQ1KhECjHfh2amANyvFL6HKKt5}`
 
 ----------------------------------------------------------------------------------------------------------------------------
+## 22 Nightmare
+Terdapat clue pada packet ![image](https://github.com/user-attachments/assets/765abf58-4736-4851-b1c3-ffbb3a31f16e) <br />
+Jika kita filter conversation antara keduanya dapat diilihat bahwa attacker mencoba melakukan login beberapa kali sebelum berhasil.
+Untuk mengetahui file yang dikirim penyerang kita dapat coba menggunakan filter _frame contains "STOR"_ <br />
+![image](https://github.com/user-attachments/assets/4ad10212-e20a-4322-8d1d-f6cbbf93b0fc) <br />
+Selanjutnya export object - ftp data untuk mendapatkan file sh1k4.jpg dan st0r.py <br />
+![image](https://github.com/user-attachments/assets/dcb8a67e-9b58-4a47-a30d-1dc1a7b3916f) <br />
+Lalu dalam file St0r.py terdapat kode biner ``001001100011010000100010001000100011101001101110001001110011100001101110000110100011101000111100001011110011111000100001011011100001111000100001001111010011110100100111
+ jika di decode `hallo im Torako Koshi`
+
+### FLAG
+`JarkomIT{Sh1k4n0ko_N0_k05h1tan_5GtovoFqcG0nnXDHTguLEpsGJ7AnbPKu8xNFqp8SCeehCotWUQYLmUNU}`
+
+-----------------------------------------------------------------------------------------------------------------------------`
+
+## InnerRCE
+
 
 
 
